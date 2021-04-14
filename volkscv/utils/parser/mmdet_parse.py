@@ -1,5 +1,6 @@
 import os
 import json
+import pickle
 from collections import defaultdict
 
 import numpy as np
@@ -36,7 +37,12 @@ class MMDETParser(BaseParser):
         self.data = self.load_data(anno_path)
 
     def load_data(self, anno_path):
-        data = json.load(open(anno_path, 'r'))
+        if anno_path.endswith('json'):
+            data = json.load(open(anno_path, 'r'))
+        elif anno_path.endswith('pkl'):
+            data = pickle.load(open(anno_path, 'rb'))
+        else:
+            raise TypeError('Expect `anno_path` to be ".json" or ".pkl".')
         result = defaultdict(list)
         for item in data:
             fname = self.imgid2filename[item['image_id']]
