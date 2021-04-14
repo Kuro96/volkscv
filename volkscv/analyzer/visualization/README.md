@@ -1,13 +1,16 @@
-# 1. Introduction
+# Visualization
+
+## 1. Introduction
+
 ``Volkscv.analyzer.visualization`` is designed for visualization of different cv tasks, includes classification, detection and semantic segmentation.
 
-# 2. Support
-- [x] Image browsing
+## 2. Support
 
+- [x] Image browsing
 - [x] Error analysis
 
+## 3. Usage
 
-# 3. Usage
 ```python
 from volkscv.utils.parser import parse_data
 from volkscv.analyzer.visualization import visualization
@@ -118,15 +121,20 @@ if __name__ == '__main__':
 ```python
 test_cls()
 ```
+
 Sample of classification result of ImageNet.
 ![avatar](../../../resources/visualization/cls/ILSVRC2012_val_00049998.png)
+
 ```python
 test_det()
 ```
+
 Sample of detection result of COCO, masks indicate fn and fp bboxes.
 ![avatar](../../../resources/visualization/det/COCO_val2014_000000581062.png)
+
 ```python
 test_seg()
 ```
+
 Sample of segmentation result of COCO.
 ![avatar](../../../resources/visualization/seg/COCO_val2014_000000581062.png)
